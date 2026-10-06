@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Gaegu:wght@400;700&family=Patrick+Hand&family=Sniglet:wght@400;800&family=Caveat:wght@600;700&family=Great+Vibes&display=swap');
+
+:root {
+  --font-comic: 'Gaegu', 'Patrick Hand', cursive;
+  --font-sniglet: 'Sniglet', cursive;
+  --font-fredoka: 'Fredoka', cursive;
+  --font-calligraphy: 'Great Vibes', cursive;
+  --font-handwritten: 'Caveat', cursive;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-comic);
+  background: #f73131;
+  color: #fff;
+  overflow-x: hidden;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Comic / Doodle Keypad Buttons */
+.comic-key-btn {
+  aspect-ratio: 1;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.42);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 2px 3px 0px rgba(180, 20, 20, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.6);
+  color: #eb2828;
+  font-family: var(--font-sniglet), var(--font-fredoka), sans-serif;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.12s ease;
+  user-select: none;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.9);
+}
+
+.comic-key-btn:hover {
+  background: rgba(255, 255, 255, 0.65);
+  transform: translate(-1px, -2px) scale(1.05);
+  box-shadow: 3px 5px 0px rgba(180, 20, 20, 0.5);
+}
+
+.comic-key-btn:active {
+  transform: translate(2px, 2px) scale(0.95);
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* Comic Passcode Box */
+.comic-passcode-box {
+  width: 48px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.35);
+  border: 2.5px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 2px 3px 0px rgba(180, 20, 20, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.5);
+  color: #fff;
+  font-family: var(--font-sniglet), sans-serif;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 1.5px 1.5px 0px rgba(180, 20, 20, 0.6);
+  font-size: 26px;
+}
+
+/* Comic Next Button */
+.comic-next-btn {
+  background: rgba(255, 255, 255, 0.6);
+  border: 2.5px solid rgba(255, 255, 255, 0.95);
+  border-radius: 9999px;
+  box-shadow: 2px 4px 0px rgba(180, 20, 20, 0.4);
+  color: #e52525;
+  font-family: var(--font-sniglet), sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 8px 36px;
+  cursor: pointer;
+  transition: all 0.12s ease;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8);
+}
+
+.comic-next-btn:hover {
+  background: #ffffff;
+  transform: translate(-1px, -2px) scale(1.04);
+  box-shadow: 3px 6px 0px rgba(180, 20, 20, 0.5);
+}
+
+.comic-next-btn:active {
+  transform: translate(2px, 2px) scale(0.96);
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+}
+
+/* Hand-drawn Polaroid Frame */
+.comic-polaroid {
+  background: #ffffff;
+  padding: 14px 14px 28px 14px;
+  border-radius: 6px;
+  box-shadow: 
+    4px 6px 0px rgba(160, 20, 20, 0.4),
+    0 15px 35px rgba(0, 0, 0, 0.35);
+  border: 2px solid #fff;
+}
+
+/* Sticker Drop Shadow */
+.sticker-shadow {
+  filter: drop-shadow(2px 4px 0px rgba(160, 20, 20, 0.4));
+}

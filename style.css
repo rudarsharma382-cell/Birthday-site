@@ -1,0 +1,717 @@
+/* ==========================================================================
+   ANTI-GRAVITY LUXURY • NAKSH DAHIYA BIRTHDAY EXPERIENCE
+   Design System & Styling Masterpiece
+   ========================================================================== */
+
+/* Root Custom Properties */
+:root {
+  --bg-obsidian: #030308;
+  --bg-space: #070a16;
+  --bg-midnight: #0d1326;
+
+  --gold-primary: #e5a93b;
+  --gold-light: #ffd269;
+  --gold-glow: rgba(255, 210, 105, 0.45);
+  --cyan-neon: #00f2fe;
+  --cyan-glow: rgba(0, 242, 254, 0.45);
+  --magenta-neon: #ff007f;
+  --magenta-glow: rgba(255, 0, 127, 0.35);
+
+  --glass-bg: rgba(255, 255, 255, 0.035);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-blur: 24px;
+}
+
+/* Global Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-obsidian);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-obsidian);
+  color: #f1f5f9;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #030308;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #ffd269, #e5a93b);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+
+/* Hide scrollbar for carousel but keep functional */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ==========================================================================
+   CUSTOM CURSOR (STARDUST LUXURY)
+   ========================================================================== */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: #ffd269;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 12px #ffd269, 0 0 24px #ffd269;
+  transition: opacity 0.2s ease;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid rgba(255, 210, 105, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease;
+  backdrop-filter: blur(1px);
+}
+
+body:hover .cursor-ring.active {
+  width: 65px;
+  height: 65px;
+  border-color: var(--cyan-neon);
+  background: rgba(0, 242, 254, 0.08);
+}
+
+/* ==========================================================================
+   AMBIENT LIGHT LEAKS & STARFIELD
+   ========================================================================== */
+.ambient-leak {
+  position: absolute;
+  width: 65vw;
+  height: 65vw;
+  max-width: 900px;
+  max-height: 900px;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  opacity: 0.28;
+  animation: leakDrift 22s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+}
+
+.leak-gold {
+  background: radial-gradient(circle, rgba(255, 210, 105, 0.45) 0%, rgba(229, 169, 59, 0.15) 50%, transparent 75%);
+}
+
+.leak-cyan {
+  background: radial-gradient(circle, rgba(0, 242, 254, 0.35) 0%, rgba(13, 19, 38, 0.15) 50%, transparent 75%);
+  animation-duration: 28s;
+  animation-delay: -5s;
+}
+
+.leak-magenta {
+  background: radial-gradient(circle, rgba(255, 0, 127, 0.25) 0%, rgba(138, 43, 226, 0.12) 50%, transparent 75%);
+  animation-duration: 34s;
+  animation-delay: -10s;
+}
+
+@keyframes leakDrift {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(60px, -40px) scale(1.15);
+  }
+  100% {
+    transform: translate(-50px, 50px) scale(0.95);
+  }
+}
+
+.stars-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 120px 80px, #ffd269, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 240px 180px, #00f2fe, rgba(0,0,0,0)),
+    radial-gradient(1px 1px at 420px 220px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 640px 140px, #ffd269, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 800px 800px;
+  opacity: 0.4;
+}
+
+.vignette-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, transparent 40%, rgba(3, 3, 8, 0.8) 100%);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   ADVANCED GLASSMORPHISM
+   ========================================================================== */
+.glass-monolith {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.015) 100%);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 
+    0 20px 50px rgba(0, 0, 0, 0.7),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.glass-card {
+  background: rgba(13, 19, 38, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 210, 105, 0.4);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 210, 105, 0.15);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.glass-pill:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 210, 105, 0.5);
+  box-shadow: 0 0 20px rgba(255, 210, 105, 0.2);
+}
+
+.glass-badge {
+  background: rgba(255, 210, 105, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 0 20px rgba(255, 210, 105, 0.1);
+}
+
+.glass-button {
+  background: linear-gradient(135deg, rgba(229, 169, 59, 0.2) 0%, rgba(255, 210, 105, 0.06) 100%);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-button:hover {
+  background: linear-gradient(135deg, rgba(255, 210, 105, 0.3) 0%, rgba(0, 242, 254, 0.15) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px rgba(255, 210, 105, 0.35);
+}
+
+/* ==========================================================================
+   TYPOGRAPHY & HERO CALLIGRAPHY
+   ========================================================================== */
+.naksh-calligraphy {
+  font-family: 'Great Vibes', 'Allura', 'Alex Brush', cursive;
+  line-height: 1.15;
+  background: linear-gradient(135deg, #fff7db 0%, #ffd269 35%, #e5a93b 70%, #fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 35px rgba(255, 210, 105, 0.5);
+  display: inline-block;
+  transform-origin: center center;
+}
+
+.calligraphy-glow-line {
+  width: 140px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ffd269, #00f2fe, transparent);
+  border-radius: 9999px;
+  box-shadow: 0 0 15px rgba(255, 210, 105, 0.8);
+}
+
+/* ==========================================================================
+   ANTI-GRAVITY FLOATING GLYPHS (HERO)
+   ========================================================================== */
+.floating-glyph {
+  position: absolute;
+  z-index: 2;
+  will-change: transform;
+}
+
+.glyph-1 {
+  top: 18%;
+  left: 8%;
+  animation: antiGravityFloat 14s ease-in-out infinite alternate;
+}
+
+.glyph-2 {
+  top: 26%;
+  right: 10%;
+  animation: antiGravityFloat 18s ease-in-out infinite alternate-reverse;
+}
+
+.glyph-3 {
+  bottom: 20%;
+  left: 12%;
+  animation: antiGravityFloat 20s ease-in-out infinite alternate;
+}
+
+.glyph-diamond {
+  width: 50px;
+  height: 50px;
+  border: 1.5px solid rgba(255, 210, 105, 0.4);
+  transform: rotate(45deg);
+  background: rgba(255, 210, 105, 0.03);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 25px rgba(255, 210, 105, 0.2);
+}
+
+.glyph-ring {
+  width: 70px;
+  height: 70px;
+  border: 1.5px dashed rgba(0, 242, 254, 0.4);
+  border-radius: 50%;
+  animation: spinSlow 30s linear infinite;
+  box-shadow: 0 0 30px rgba(0, 242, 254, 0.2);
+}
+
+.glyph-tetra {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 45px solid rgba(255, 0, 127, 0.15);
+  filter: drop-shadow(0 0 15px rgba(255, 0, 127, 0.3));
+}
+
+@keyframes antiGravityFloat {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-35px) rotate(10deg);
+  }
+  100% {
+    transform: translateY(-15px) rotate(-8deg);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   HERO AVATAR SHOWCASE MEDALLION
+   ========================================================================== */
+.hero-avatar-wrapper {
+  perspective: 1200px;
+}
+
+.avatar-ring-glow {
+  position: absolute;
+  inset: -15px;
+  background: conic-gradient(from 180deg, #ffd269, #00f2fe, #ff007f, #ffd269);
+  border-radius: 28px;
+  filter: blur(24px);
+  opacity: 0.45;
+  animation: spinSlow 20s linear infinite;
+  z-index: 0;
+}
+
+.avatar-glass-card {
+  position: relative;
+  z-index: 1;
+  width: 290px;
+  background: rgba(10, 14, 28, 0.7);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 22px;
+  padding: 8px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.avatar-image-container {
+  width: 100%;
+  height: 310px;
+  overflow: hidden;
+  border-radius: 16px;
+  position: relative;
+}
+
+.avatar-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(3, 3, 8, 0.6) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   EQUALIZER AUDIO VISUALIZER
+   ========================================================================== */
+.equalizer {
+  display: flex;
+  align-items: flex-end;
+  gap: 2.5px;
+  height: 16px;
+  width: 18px;
+}
+
+.equalizer .eq-bar {
+  display: block;
+  width: 2.5px;
+  background: #ffd269;
+  border-radius: 2px;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.eq-bar-1 { height: 6px; }
+.eq-bar-2 { height: 12px; }
+.eq-bar-3 { height: 8px; }
+.eq-bar-4 { height: 14px; }
+
+.sound-active .equalizer .eq-bar {
+  opacity: 1;
+  background: #00f2fe;
+  box-shadow: 0 0 8px #00f2fe;
+}
+
+.sound-active .eq-bar-1 {
+  animation: eqJump 0.8s ease-in-out infinite alternate;
+}
+.sound-active .eq-bar-2 {
+  animation: eqJump 0.6s ease-in-out infinite alternate 0.2s;
+}
+.sound-active .eq-bar-3 {
+  animation: eqJump 0.9s ease-in-out infinite alternate 0.4s;
+}
+.sound-active .eq-bar-4 {
+  animation: eqJump 0.7s ease-in-out infinite alternate 0.1s;
+}
+
+@keyframes eqJump {
+  0% { height: 4px; }
+  100% { height: 16px; }
+}
+
+/* ==========================================================================
+   3D TILT ENGINE & HARDWARE ACCELERATION
+   ========================================================================== */
+.tilt-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.tilt-card:hover {
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 210, 105, 0.2);
+}
+
+/* ==========================================================================
+   STAT CAPSULES
+   ========================================================================== */
+.stat-card {
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 210, 105, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.stat-card:hover .stat-glow {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   THE "DAMN CRAZY" POLAROID CAROUSEL
+   ========================================================================== */
+.carousel-track {
+  display: flex;
+  cursor: grab;
+  user-select: none;
+  padding: 20px 10px;
+  will-change: transform;
+}
+
+.carousel-track:active {
+  cursor: grabbing;
+}
+
+.polaroid-card {
+  width: 290px;
+  background: rgba(18, 22, 38, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  padding: 12px;
+  position: relative;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.polaroid-card:hover {
+  transform: translateY(-14px) scale(1.03);
+  border-color: rgba(255, 210, 105, 0.6);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9), 0 0 35px rgba(255, 210, 105, 0.25);
+}
+
+.polaroid-pin {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  background: #ffd269;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 12px #ffd269;
+  z-index: 10;
+}
+
+.polaroid-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffd269;
+  font-family: 'Syncopate', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  letter-spacing: 0.15em;
+}
+
+.polaroid-glare {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, transparent 60%);
+  pointer-events: none;
+  opacity: 0.4;
+  transition: opacity 0.4s ease;
+}
+
+.polaroid-card:hover .polaroid-glare {
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   CELESTIAL CANDLE & WISH CEREMONY
+   ========================================================================== */
+.candle-container {
+  width: 160px;
+  height: 220px;
+  perspective: 800px;
+}
+
+.candle-flame {
+  position: relative;
+  width: 24px;
+  height: 48px;
+  margin: 0 auto;
+  cursor: pointer;
+  transform-origin: center bottom;
+  animation: flameFlicker 1.8s infinite ease-in-out;
+}
+
+.flame-inner {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 42px;
+  background: linear-gradient(to top, #ffffff 0%, #ffd269 45%, #ff4b1f 90%);
+  border-radius: 50% 50% 35% 35% / 60% 60% 40% 40%;
+  box-shadow: 
+    0 0 20px #ffd269,
+    0 0 45px #ff7b00,
+    0 0 70px rgba(255, 210, 105, 0.8);
+}
+
+.flame-glow {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, rgba(255, 210, 105, 0.4) 0%, transparent 70%);
+  pointer-events: none;
+  animation: flamePulse 2s infinite ease-in-out alternate;
+}
+
+@keyframes flameFlicker {
+  0%, 100% {
+    transform: rotate(-1.5deg) scaleY(1);
+  }
+  30% {
+    transform: rotate(2deg) scaleY(1.06);
+  }
+  60% {
+    transform: rotate(-2.5deg) scaleY(0.96);
+  }
+  80% {
+    transform: rotate(1deg) scaleY(1.04);
+  }
+}
+
+@keyframes flamePulse {
+  0% { transform: translateX(-50%) scale(0.9); opacity: 0.6; }
+  100% { transform: translateX(-50%) scale(1.15); opacity: 1; }
+}
+
+.candle-flame.extinguished {
+  animation: none;
+  opacity: 0.1;
+  filter: grayscale(1);
+  transition: all 0.6s ease;
+}
+
+.candle-pillar {
+  width: 60px;
+  height: 120px;
+  margin: 0 auto;
+  position: relative;
+  background: linear-gradient(135deg, #1e2438 0%, #0c1020 60%, #151a30 100%);
+  border: 1px solid rgba(255, 210, 105, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(255, 210, 105, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.candle-band {
+  border-top: 1px solid rgba(255, 210, 105, 0.4);
+  border-bottom: 1px solid rgba(255, 210, 105, 0.4);
+  width: 100%;
+  text-align: center;
+  padding: 4px 0;
+  background: rgba(255, 210, 105, 0.08);
+}
+
+.candle-pedestal {
+  width: 110px;
+  height: 16px;
+  background: linear-gradient(to right, #0d1222, #1f2742, #0d1222);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 210, 105, 0.15);
+}
+
+/* ==========================================================================
+   TYPEWRITER MONUMENT
+   ========================================================================== */
+.typewriter-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1.25em;
+  background-color: #ffd269;
+  margin-left: 3px;
+  vertical-align: middle;
+  box-shadow: 0 0 10px #ffd269, 0 0 20px #ffd269;
+  animation: cursorBlink 0.8s infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ==========================================================================
+   EMOJI SELECTION & VIP WISHES
+   ========================================================================== */
+.emoji-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.emoji-btn.active {
+  border-color: #ffd269;
+  background: rgba(255, 210, 105, 0.2);
+}
+
+.wish-card {
+  animation: cardFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes cardFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE REFINEMENTS
+   ========================================================================== */
+@media (max-width: 768px) {
+  .cursor-dot, .cursor-ring {
+    display: none !important;
+  }
+  .polaroid-card {
+    width: 260px;
+  }
+}
